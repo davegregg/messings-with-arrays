@@ -16,6 +16,11 @@
 
 console.log(cars)
 
+// Most professional projects are rewritten from scratch at least once. What? WHY?!
+// - You don't really understand the problem until you have solved it at least once.
+// - Make it more readable.
+// - Make it more efficient.
+// - Make it prettier.
 function createCarCard (currentCar) {
   let article = document.createElement("article")
   let header = document.createElement("header")
@@ -62,6 +67,39 @@ let mainElement = document.querySelector("main")
 for (let index = 0; index < cars.length; index += 1) {
   let currentCar = cars[index]
   
-  let article = createCarCard(currentCar)
-  mainElement.append(article)
+  let cardElement = createCarCard(currentCar)
+  mainElement.append(cardElement)
 }
+
+
+function addCar (event) {
+  event.preventDefault()
+  let form = event.target
+
+  let vin = form.vin.value
+  let make = form.make.value
+  let model = form.model.value
+  let color = form.color.value
+  let price = form.price.value
+  let year = form.year.value
+  let doorCount = form["number-of-doors"].value
+
+  let car = {
+    vin,
+    make,
+    model,
+    color,
+    price,
+    "modelYear": year,
+    "numberOfDoors": doorCount,
+  }
+
+  cars.push(car)
+  let carCardElement = createCarCard(car)
+  mainElement.prepend(carCardElement)
+
+  form.reset()
+}
+
+let addCarForm = document.querySelector("form#add-car")
+addCarForm.addEventListener("submit", addCar)
