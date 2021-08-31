@@ -98,7 +98,7 @@ function addCar (event) {
   let carCardElement = createCarCard(car)
   mainElement.prepend(carCardElement)
 
-  form.reset()
+  form.reset() // Clear the form so that it is ready for the user to enter new car information.
 }
 
 let addCarForm = document.querySelector("form#add-car")
