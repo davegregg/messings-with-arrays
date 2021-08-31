@@ -1,0 +1,4 @@
+#template-version .invisible,
+#remove-car-version .invisible {
+    display: none;
+}

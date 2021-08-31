@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="template-version" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +13,8 @@
     <nav>
       <ul>
         <li><a href="./index.html">Demo Version</a></li>
-        <li><a href="./element-clone-version.html">Version which clones and replaces an HTML template, instead createElement/append</a></li>
-        <li><a href="./remove-car-version.html">Version with Working Remove Car Button</a></li>
+        <li><a href="./template-version.html">HTML Template Version</a></li>
+        <li><a href="./remove-car-version.html">HTML Template Version w/ Working Remove Car Button</a></li>
       </ul>
     </nav>
 
@@ -44,8 +44,8 @@
     </form>
 
     <main>
-        <!--       
-        <article class="card">
+              
+        <article class="card invisible"><!-- This will load but won't be visible, because we don't want the use to see a flash of placeholder content on the page before the JavaScript loads. -->
             <header>INSERT MAKE, MODE, AND YEAR HERE</header>
 
             <ul>
@@ -57,10 +57,10 @@
 
             <button class="remove">Remove</button>
         </article>
-        -->
+       
     </main>
 
     <script src="./car-data.js"></script>
-    <script src="./main.js"></script>
+    <script src="./main-template-version.js"></script>
 </body>
 </html>
